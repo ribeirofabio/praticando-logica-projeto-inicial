@@ -1,0 +1,34 @@
+body {
+    background-color: lightgrey;
+}
+
+.container {
+    background-color: ghostwhite;
+    width: 80%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #1a2027;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container__campo {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;        
+}
+
+.container__botao {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    max-height: 10%;        
+}
