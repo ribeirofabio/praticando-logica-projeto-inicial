@@ -5,7 +5,20 @@ function alterarStatus(id) {
     let imagem = gameClicado.querySelector('.dashboard__item__img'); // PROCURAR UM ELEMENTO COM UMA CLASSE ESPECIFICADA (.[classe]) DENTRO DO ID
     // SELECIONANDO O BOTAO DE ALUGAR/DEVOLVER
     let botao = gameClicado.querySelector('.dashboard__item__button');
-    // TESTANDO: MOSTRAR O NOME DO JOGO CLICADO
-    let nomeGame = gameClicado.querySelector('.dashboard__item__name');    
-    alert(nomeGame.textContent);
+    // LOGICA PARA ALTERAR O STATUS ATRAVES DA LISTA DE CLASSES DO ELEMENTO
+    if (imagem.classList.contains('dashboard__item__img--rented')) {
+        // REMOVENDO A CLASSE DA LISTA DE CLASSES
+        imagem.classList.remove('dashboard__item__img--rented');
+        // ALTERAR O TEXTO DO BOTAO
+        botao.textContent = 'Alugar';
+        // ALTERAR A COR DO BOTAO
+        botao.classList.remove('dashboard__item__button--return');
+    } else {
+        // CASO NAO POSSUA, ADICIONE A CLASSE
+        imagem.classList.add('dashboard__item__img--rented');
+        // ALTERAR O TEXTO DO BOTAO
+        botao.textContent = 'Devolver';
+        // ALTERAR A COR DO BOTAO
+        botao.classList.add('dashboard__item__button--return');
+    }
 }        
