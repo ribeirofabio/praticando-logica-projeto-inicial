@@ -8,8 +8,14 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     // RECUPERAR A LISTA DE AMIGOS
     let lista = document.getElementById('lista-amigos');
-    // ADICIONAR AMIGOS NO ARRAY DE AMIGOS
-    amigos.push(amigo.value);
+    // SE O NOME JA EXISTE
+    if(amigos.includes(amigo.value)){
+        alert('Nome já existe!');
+        return;
+    } else {
+        // ADICIONAR AMIGOS NO ARRAY DE AMIGOS
+        amigos.push(amigo.value);
+    }    
     // CONDICOES
     // SE A LISTA ESTIVER VAZIA
     if(lista.textContent == '') {
@@ -52,4 +58,13 @@ function embaralha(lista) {
         [lista[indice - 1], lista[indiceAleatorio]] = 
             [lista[indiceAleatorio], lista[indice - 1]];
     }
+}
+
+function reiniciar() {    
+    // LIMPA O ARRAY DE AMIGOS
+    amigos = [];
+    // LIMPA A LISTA DE AMIGOS
+    document.getElementById('lista-amigos').innerHTML = '';
+    // LIMPA O CAMPO SORTEIO
+    document.getElementById('lista-sorteio').innerHTML = '';    
 }
