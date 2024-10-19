@@ -8,9 +8,18 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     // RECUPERAR A LISTA DE AMIGOS
     let lista = document.getElementById('lista-amigos');
-    // SE O NOME JA EXISTE
-    if(amigos.includes(amigo.value)){
+    // VALIDAR SE O NOME ESTA VAZIO
+    if(amigo.value == '') {
+        // MOSTRA UMA MENSAGEM NA TELA
+        alert('Informe o nome do amigo!')
+        // RETORNA PRA QUEM CHAMOU A FUNCAO ADICIONAR
+        return;
+    } else {
+        // SE O NOME JA EXISTE
+        if(amigos.includes(amigo.value)){
+        // MOSTRA UMA MENSAGEM NA TELA
         alert('Nome já existe!');
+        // RETORNA PRA QUEM CHAMOU A FUNCAO ADICIONAR
         return;
     } else {
         // ADICIONAR AMIGOS NO ARRAY DE AMIGOS
@@ -27,6 +36,8 @@ function adicionar() {
     }
     // LIMPA O CAMPO NOME DO AMIGO
     amigo.value = '';
+    }
+    
 }
 
 function sortear() {
