@@ -36,11 +36,17 @@ function adicionar() {
     }
     // LIMPA O CAMPO NOME DO AMIGO
     amigo.value = '';
-    }
-    
+    }    
 }
 
 function sortear() {
+    // VALIDA SE EXISTEM NO MINIMO 4 AMIGOS
+    if (amigos.length < 4) {
+        // MOSTRA UMA MENSAGEM NA TELA
+        alert('Adicione pelo menos 4 amigos!')
+        // RETORNA PRA QUEM CHAMOU A FUNCAO ADICIONAR
+        return;
+    }
     // EMBARALHA LISTA DE AMIGOS
     embaralha(amigos);
     // RECUPERA LISTA DE SORTEIO
