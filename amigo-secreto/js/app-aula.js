@@ -5,27 +5,25 @@ let amigos = [];
 // FUNCOES
 function adicionar() {
     // RECUPERAR NOME DO AMIGO DIGITADO
-    let amigo = document.getElementById('nome-amigo');
-    // RECUPERAR A LISTA DE AMIGOS
-    let lista = document.getElementById('lista-amigos');
+    let amigo = document.getElementById('nome-amigo');    
     // VALIDAR SE O NOME ESTA VAZIO
     if(amigo.value == '') {
         // MOSTRA UMA MENSAGEM NA TELA
         alert('Informe o nome do amigo!')
         // RETORNA PRA QUEM CHAMOU A FUNCAO ADICIONAR
         return;
-    } else {
-        // SE O NOME JA EXISTE
-        if(amigos.includes(amigo.value)){
+    }
+    // VALIDAR AMIGO JA ADICIONADO
+    if(amigos.includes(amigo.value)) {
         // MOSTRA UMA MENSAGEM NA TELA
-        alert('Nome já existe!');
+        alert('Nome já adicionado!');
         // RETORNA PRA QUEM CHAMOU A FUNCAO ADICIONAR
         return;
-    } else {
-        // ADICIONAR AMIGOS NO ARRAY DE AMIGOS
-        amigos.push(amigo.value);
-    }    
-    // CONDICOES
+    }
+    // RECUPERAR A LISTA DE AMIGOS
+    let lista = document.getElementById('lista-amigos');
+    // ADICIONAR AMIGOS NO ARRAY DE AMIGOS
+    amigos.push(amigo.value);            
     // SE A LISTA ESTIVER VAZIA
     if(lista.textContent == '') {
         // INCLUIR NA LISTA DE AMIGOS
@@ -36,8 +34,8 @@ function adicionar() {
     }
     // LIMPA O CAMPO NOME DO AMIGO
     amigo.value = '';
-    }    
-}
+}    
+
 
 function sortear() {
     // VALIDA SE EXISTEM NO MINIMO 4 AMIGOS
